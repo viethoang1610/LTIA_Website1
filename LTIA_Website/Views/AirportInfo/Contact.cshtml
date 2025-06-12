@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Liên hệ";
+}
+
+<h2 class="mb-4">Thông tin liên hệ</h2>
+
+<p>Quý khách có thể liên hệ với chúng tôi qua các thông tin sau:</p>
+
+<ul>
+    <li>📍 Địa chỉ: Sân bay Quốc tế Long Thành, Đồng Nai</li>
+    <li>📞 Số điện thoại: 1900 123 456</li>
+    <li>📧 Email: support@ltia.vn</li>
+</ul>
+
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Họ tên</label>
+        <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Nội dung</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Gửi tin nhắn..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi liên hệ</button>
+</form>

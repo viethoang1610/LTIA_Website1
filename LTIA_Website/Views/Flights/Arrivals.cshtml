@@ -1,0 +1,41 @@
+﻿@model IEnumerable<LTIA_website.Models.Flight>
+@{
+    ViewData["Title"] = "Chuyến bay đến";
+    Layout = "_Layout";
+}
+
+<h2 class="mb-4">@ViewData["Title"]</h2>
+
+<div class="flight-timeline">
+    @foreach (var f in Model)
+    {
+        <div class="timeline-item mb-4">
+            <div class="time">@f.ScheduledTime.ToString("HH:mm")</div>
+            <div class="dot"></div>
+            <div class="details card p-3">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <img src="@f.AirlineLogoUrl"
+                             alt="@f.AirlineName"
+                             class="airline-logo" />
+                    </div>
+                    <div class="col">
+                        <h5 class="mb-1">@f.FlightNumber</h5>
+                        <p class="mb-0">
+                            <strong>@f.Origin</strong> → <strong>@f.Destination</strong>
+                        </p>
+                    </div>
+                    <div class="col-auto text-center">
+                        <div>Ga: <strong>@f.Terminal</strong></div>
+                        <div>Băng chuyền: <strong>@f.Belt</strong></div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge status-@(f.Status.Replace(" ", "").ToLower())">
+                            @f.Status
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

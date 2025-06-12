@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<!-- Banner chính -->
+<section class="hero-section text-white text-center" style="background: url('/Template/images/header-bg.jpg') no-repeat center center; background-size: cover; height: 400px;">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100" style="background-color: rgba(0,0,0,0.4);">
+        <h1 class="display-4 fw-bold">Chào mừng đến với Sân bay Quốc tế Long Thành (LTIA)</h1>
+        <p class="lead">Cổng giao thương quốc tế của Việt Nam</p>
+    </div>
+</section>
+
+<!-- Thông tin nhanh -->
+<section class="container py-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <i class="fas fa-plane-departure fa-3x text-primary mb-3"></i>
+            <h5>Chuyến bay đi</h5>
+            <p>Theo dõi các chuyến bay rời khỏi sân bay Long Thành.</p>
+            <a class="btn btn-outline-primary" asp-controller="Flights" asp-action="Departures">Xem chi tiết</a>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-plane-arrival fa-3x text-success mb-3"></i>
+            <h5>Chuyến bay đến</h5>
+            <p>Cập nhật thông tin các chuyến bay đến.</p>
+            <a class="btn btn-outline-success" asp-controller="Flights" asp-action="Arrivals">Xem chi tiết</a>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-building fa-3x text-warning mb-3"></i>
+            <h5>Hãng hàng không</h5>
+            <p>Thông tin các hãng bay đang khai thác tại LTIA.</p>
+            <a class="btn btn-outline-warning" asp-controller="Flights" asp-action="Airlines">Tìm hiểu thêm</a>
+        </div>
+    </div>
+</section>
+
+<!-- Dịch vụ nổi bật -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h3 class="text-center mb-4">Dịch vụ nổi bật</h3>
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-tags fa-2x mb-2 text-danger"></i>
+                <h6>Khuyến mãi</h6>
+                <p>Ưu đãi từ nhà hàng, cửa hàng, và hãng bay.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-utensils fa-2x mb-2 text-primary"></i>
+                <h6>Ẩm thực</h6>
+                <p>Thưởng thức các món ăn phong phú từ khắp nơi.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-shopping-bag fa-2x mb-2 text-success"></i>
+                <h6>Mua sắm</h6>
+                <p>Đa dạng sản phẩm miễn thuế và đặc sản Việt Nam.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <i class="fas fa-couch fa-2x mb-2 text-info"></i>
+                <h6>Phòng chờ thương gia</h6>
+                <p>Không gian riêng tư và tiện nghi cao cấp.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tin tức -->
+<section class="container py-5">
+    <h3 class="text-center mb-4">Tin tức mới nhất</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="~/images/news1.jpg" class="card-img-top" alt="news1">
+                <div class="card-body">
+                    <h5 class="card-title">LTIA khai trương nhà ga mới</h5>
+                    <p class="card-text">Sân bay Long Thành vừa đưa vào vận hành nhà ga quốc tế hiện đại bậc nhất.</p>
+                    <a asp-controller="News" asp-action="Index" class="btn btn-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Thêm các tin tức khác nếu có -->
+    </div>
+</section>
+
+<h1>@Localizer["WelcomeMessage"]</h1>
+<p>@Localizer["FlightInfo"]</p>
+<p>@Localizer["Services"]</p>

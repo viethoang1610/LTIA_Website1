@@ -1,0 +1,59 @@
+﻿@* Views/Shared/_Footer.cshtml *@
+<footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <!-- Cột 1: Thông tin chuyến bay -->
+            <div class="col-6 col-md-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3">Thông tin chuyến bay</h6>
+                <ul class="list-unstyled">
+                    <li><a class="text-white-50 text-decoration-none" href="/Flights/Departures">Chuyến bay đi</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Flights/Arrivals">Chuyến bay đến</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Flights/ProcedureGuide">Hướng dẫn thủ tục</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Flights/Transit">Quá cảnh/Chuyển tiếp</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Flights/Routes">Hệ thống đường bay</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 2: Dịch vụ sân bay -->
+            <div class="col-6 col-md-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3">Dịch vụ</h6>
+                <ul class="list-unstyled">
+                    <li><a class="text-white-50 text-decoration-none" href="/Services/Promotions">Khuyến mãi</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Services/Dining">Ẩm thực</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Services/Shopping">Mua sắm</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Services/Lounge">Phòng chờ thương gia</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Services/Relax">Thư giãn</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Hỗ trợ & Tin tức -->
+            <div class="col-6 col-md-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3">Hỗ trợ & Tin tức</h6>
+                <ul class="list-unstyled">
+                    <li><a class="text-white-50 text-decoration-none" href="/Support/Special">Hỗ trợ đặc biệt</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Support/Transport">Di chuyển</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Support/Events">Sự kiện & Hoạt động</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/News">Tin tức</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/News/Archive">Lưu trữ tin</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 4: Giới thiệu & Liên hệ -->
+            <div class="col-6 col-md-3 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3">Về LTIA</h6>
+                <ul class="list-unstyled">
+                    <li><a class="text-white-50 text-decoration-none" href="/AirportInfo/Index">Giới thiệu chung</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/AirportInfo/Contact">Liên hệ</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/AirportInfo/Careers">Tuyển dụng</a></li>
+                    <li><a class="text-white-50 text-decoration-none" href="/Home/Privacy">Chính sách & Điều khoản</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-light" />
+
+        <div class="text-center small text-white-50 mt-3">
+            &copy; @DateTime.Now.Year Cảng Hàng Không Quốc Tế Long Thành. Bản quyền thuộc về ACV.
+        </div>
+    </div>
+</footer>

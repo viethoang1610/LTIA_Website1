@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LTIA_website.Models.Flight>
+
+<h2>Flight Schedule</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Scheduled Time</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Airline</th>
+            <th>Flight Number</th>
+            <th>Terminal</th>
+            <th>Gate</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var flight in Model)
+    {
+        <tr>
+            <td>@flight.ScheduledTime.ToString("g")</td>
+            <td>@flight.Origin</td>
+            <td>@flight.Destination</td>
+            <td>@flight.AirlineName</td>
+            <td>@flight.FlightNumber</td>
+            <td>@flight.Terminal</td>
+            <td>@flight.Status</td>
+        </tr>
+    }
+    </tbody>
+</table>

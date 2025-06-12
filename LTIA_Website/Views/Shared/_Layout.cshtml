@@ -1,0 +1,149 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LTIA</title>
+
+    <!-- CSS từ template hoặc của riêng bạn -->
+    <link rel="stylesheet" href="~/template/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+</head>
+<body>
+        <!-- NAVIGATION -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                <img src="\Template\images\LTIA-logo.png" alt="ACV" style="height:60px;" class="me-2" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <!-- Thông tin chuyến bay -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Thông tin chuyến bay</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Flights" asp-action="ProcedureGuide">Hướng dẫn thủ tục</a></li>
+                            <li><a class="dropdown-item" asp-controller="Flights" asp-action="Departures">Chuyến bay đi</a></li>
+                            <li><a class="dropdown-item" asp-controller="Flights" asp-action="Arrivals">Chuyến bay đến</a></li>
+                            <li><a class="dropdown-item" asp-controller="Airlines" asp-action="Index">Thông tin hãng bay</a></li>
+                            <li><a class="dropdown-item" asp-controller="Flights" asp-action="Transit">Quá cảnh/Chuyển tiếp</a></li>
+                            <li><a class="dropdown-item" asp-controller="Flights" asp-action="Routes">Hệ thống đường bay</a></li>
+                            <li><a class="dropdown-item" asp-controller="Flights" asp-action="DelayBoard">Bảng thời gian chờ</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dịch vụ -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Dịch vụ</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Services" asp-action="Promotions">Khuyến mãi</a></li>
+                            <li><a class="dropdown-item" asp-controller="Services" asp-action="Dining">Ẩm thực</a></li>
+                            <li><a class="dropdown-item" asp-controller="Services" asp-action="Shopping">Mua sắm</a></li>
+                            <li><a class="dropdown-item" asp-controller="Services" asp-action="Lounge">Phòng chờ thương gia</a></li>
+                            <li><a class="dropdown-item" asp-controller="Services" asp-action="Relax">Thư giãn</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Hỗ trợ -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hỗ trợ</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Support" asp-action="Special">Hỗ trợ đặc biệt</a></li>
+                            <li><a class="dropdown-item" asp-controller="Support" asp-action="Transport">Di chuyển</a></li>
+                            <li><a class="dropdown-item" asp-controller="Support" asp-action="Events">Sự kiện & Hoạt động</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Tin tức -->
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="News" asp-action="Index">Tin tức</a>
+                    </li>
+
+                    <!-- Thông tin về sân bay -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Thông tin về sân bay</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="AirportInfo" asp-action="Index">Giới thiệu</a></li>
+                            <li><a class="dropdown-item" asp-controller="AirportInfo" asp-action="Contact">Liên hệ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Góc phải: Trung tâm trợ giúp và chuyển ngôn ngữ -->
+                <ul class="navbar-nav ms-auto">
+                @{
+                    var username = Context.Session.GetString("username");
+                }
+
+                @if (!string.IsNullOrEmpty(username))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown">
+                            <a href="d:\ltia_website\ltia_website\migrations\20250611064419_migrations.designer.cs">d:\ltia_website\ltia_website\migrations\20250611064419_migrations.designer.cs</a>
+                            <a href="d:\ltia_website\ltia_website\migrations\20250611064419_migrations.cs">d:\ltia_website\ltia_website\migrations\20250611064419_migrations.cs</a>
+                            Xin chào, @username
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-light d-flex align-items-center" asp-controller="Account" asp-action="Login">
+                            <img src="~/Template/images/register_login_signup_icon_219991.png" alt="login-icon" width="20" height="20" class="me-2" />
+                            Đăng nhập
+                        </a>
+                    </li>
+                }
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning fw-bold" asp-controller="HelpCenter" asp-action="Index">
+                            <i class="bi bi-question-circle-fill"></i> Trợ giúp
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown">
+                            🌐 Ngôn ngữ
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Tiếng Việt</a></li>
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- NỘI DUNG -->
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <!-- FOOTER -->
+    ...
+    <main class="container my-5">
+        @RenderBody()
+    </main>
+
+    @* Thay footer hiện tại bằng partial mới *@
+    @await Html.PartialAsync("_Footer")
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Template/js/main.js"></script>
+    <link href="~/Chatbot/chatbot.css" rel="stylesheet" />
+    <script src="~/Chatbot/chatbot.js"></script>
+</body>
+</html>
+

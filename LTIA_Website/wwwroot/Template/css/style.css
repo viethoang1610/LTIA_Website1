@@ -1,0 +1,101 @@
+﻿/* Đặt trong wwwroot/Template/css/style.css */
+
+/* Timeline wrapper */
+.flight-timeline {
+    position: relative;
+    padding-left: 80px;
+}
+
+    .flight-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 40px;
+        width: 2px;
+        height: 100%;
+        background: #e1e1e1;
+    }
+
+/* Timeline item */
+.timeline-item {
+    position: relative;
+}
+    /* Time label */
+    .timeline-item .time {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 70px;
+        text-align: right;
+        color: #005baa;
+        font-weight: 600;
+    }
+    /* Dot */
+    .timeline-item .dot {
+        position: absolute;
+        left: 34px;
+        top: 6px;
+        width: 12px;
+        height: 12px;
+        background: #005baa;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #e1e1e1;
+    }
+/* Details */
+.details {
+    margin-left: 20px;
+    background: #fff;
+    border: 1px solid #e3e6e8;
+    border-radius: 8px;
+}
+
+.airline-logo {
+    height: 36px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.badge {
+    padding: .4em .6em;
+    font-size: .9rem;
+}
+
+.status-boarding {
+    background: #28a745;
+    color: #fff;
+}
+
+.status-ontime {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.status-delayed {
+    background: #ffc107;
+    color: #212529;
+}
+
+.status-landed {
+    background: #6c757d;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    .flight-timeline {
+        padding-left: 60px;
+    }
+
+        .flight-timeline::before {
+            left: 30px;
+        }
+
+    .timeline-item .time {
+        width: 50px;
+    }
+
+    .timeline-item .dot {
+        left: 24px;
+    }
+}

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #1e1e2f; /* ?? n?n t?i h?n */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 400px;
+    background: rgba(40, 40, 60, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    padding: 30px;
+    color: #f0f0f0;
+}
+
+    .wrapper h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.input-box {
+    position: relative;
+    margin: 20px 0;
+}
+
+    .input-box input {
+        width: 100%;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 40px;
+        padding: 0 45px 0 20px;
+        color: #fff;
+        outline: none;
+        font-size: 16px;
+    }
+
+        .input-box input::placeholder {
+            color: #aaa;
+        }
+
+    .input-box i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #ccc;
+    }
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+    .remember-forgot a {
+        color: #a6d1ff;
+        text-decoration: none;
+    }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+.btn {
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #00aaff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .btn:hover {
+        background: #008dd1;
+    }
+
+.register-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+    .register-link a {
+        color: #a6d1ff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
